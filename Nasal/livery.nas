@@ -1,1 +1,1 @@
-aircraft.livery.init("Aircraft/O_NOME_DO_AVIAO/Models/Liveries");
+aircraft.livery.init("Aircraft/EMB-120/Models/Liveries");

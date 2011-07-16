@@ -51,7 +51,7 @@
 	 			<path>Aircraft/EMB-120/Systems/autopilot.xml</path>
 			</autopilot>
 			<electrical>
-				<path>Aircraft/Generic/generic-electrical.xml</path>
+				<path>Aircraft/EMB-120/Systems/electrical.xml</path>
 			</electrical>
 			<system>
 				<path>Aircraft/Generic/generic-systems.xml</path>
@@ -67,7 +67,7 @@
 		<sound>
 			<audible>true</audible>
 			<!-- Helice -->
-			<path>Aircraft/Generic/generic-sound.xml</path>
+			<path>Aircraft/EMB-120/Sounds/sound.xml</path>
 		</sound>
 
 		<!-- Definicoes para splash screen -->
@@ -100,7 +100,7 @@
 				<!-- x/y/z == (esquerda, direita)/(cima, baixo)/(frente, tras) -->
 				<x-offset-m archive="y">-0.38127</x-offset-m>
 				<y-offset-m archive="y">0.324531</y-offset-m>
-				<z-offset-m archive="y">-4.5102</z-offset-m>
+				<z-offset-m archive="y">-4.6502</z-offset-m>
 				<pitch-offset-deg archive="y">-8.0</pitch-offset-deg>
 			</config>
 		</view>
@@ -130,23 +130,23 @@
 		<view n="1500">
 		    <name>Left Wing</name>
 		    <type>lookfrom</type>
-		    <internal archive="y">false</internal>
+			<internal archive="y">true</internal>
 		    <config>
 		      <from-model type="bool">true</from-model>
 		      <from-model-idx type="int">0</from-model-idx>
 		      <ground-level-nearplane-m type="double">0.01f</ground-level-nearplane-m>
 		      <default-field-of-view-deg type="double">55</default-field-of-view-deg>
-		      <pitch-offset-deg>-8.0</pitch-offset-deg>
-		      <heading-offset-deg type="double">90</heading-offset-deg> <!-- parallel to the panel -->
-		      <x-offset-m archive="y"> -2.0 </x-offset-m> <!--Left/Right -->
-		      <y-offset-m archive="y"> 0.30 </y-offset-m> <!--Up/Down -->
-		      <z-offset-m archive="y"> 0.0 </z-offset-m> <!--Fdw/Back -->
+		      <pitch-offset-deg>-1.025</pitch-offset-deg>
+		      <heading-offset-deg type="double">77.90</heading-offset-deg> <!-- parallel to the panel -->
+		      <x-offset-m archive="y"> -0.7368 </x-offset-m> <!--Left/Right -->
+		      <y-offset-m archive="y"> -0.06 </y-offset-m> <!--Up/Down -->
+		      <z-offset-m archive="y"> 1.0 </z-offset-m> <!--Fdw/Back -->
 		    </config>
 	    </view>
 		<view n="1501">
 		    <name>Right Turbofan</name>
 		    <type>lookfrom</type>
-		    <internal archive="y">false</internal>
+			<internal archive="y">true</internal>
 		    <config>
 			      <from-model type="bool">true</from-model>
 			      <from-model-idx type="int">0</from-model-idx>
@@ -156,13 +156,13 @@
 			      <heading-offset-deg type="double">225</heading-offset-deg> <!-- parallel to the panel -->
 			      <x-offset-m archive="y"> 2.0 </x-offset-m> <!--Left/Right -->
 			      <y-offset-m archive="y"> 0.30 </y-offset-m> <!--Up/Down -->
-			      <z-offset-m archive="y"> 0.0 </z-offset-m> <!--Fdw/Back -->
+			      <z-offset-m archive="y"> -2.0 </z-offset-m> <!--Fdw/Back -->
 		    </config>
 	    </view>
 		<view n="1502">
 			<name>Landing Gear</name>
 			<type>lookfrom</type>
-			<internal archive="y">true</internal>
+			<internal archive="y">false</internal>
 			<config>
 				<from-model type="bool">true</from-model>
 				<from-model-idx type="int">0</from-model-idx>
@@ -189,7 +189,7 @@
 				<!-- x/y/z == right/up/back -->
 				<x-offset-m archive="y">0.38127</x-offset-m>
 				<y-offset-m archive="y">0.324531</y-offset-m>
-				<z-offset-m archive="y">-4.5102</z-offset-m>
+				<z-offset-m archive="y">-4.6502</z-offset-m>
 				<pitch-offset-deg archive="y">-10.0</pitch-offset-deg>
 			</config>
 		</view>
@@ -202,16 +202,12 @@
 		<flaps>
 			<setting>0.000</setting>
 			<!-- flaps up -->
-			<setting>0.375</setting>
-			<!-- flaps 5  -->
-			<setting>0.625</setting>
-			<!-- flaps 15 -->
-			<setting>0.750</setting>
+			<setting>0.3333333</setting>
+			<!-- flaps 15  -->
+			<setting>0.5555556</setting>
 			<!-- flaps 25 -->
-			<setting>0.875</setting>
-			<!-- flaps 30 -->
-			<setting>1.000</setting>
-			<!-- flaps 40 -->
+			<setting>1.0000000</setting>
+			<!-- flaps 45 -->
 		</flaps>
 		
 
@@ -273,6 +269,15 @@
 				<menu n="100">
 					<label>EMB-120</label>
 					<enabled type="bool">true</enabled>
+					
+                    <item>
+                        <label>Autostart</label>
+                        <binding>
+                            <command>property-toggle</command>
+                            <property>sim/model/start-idling</property>
+                        </binding>
+                    </item>
+                    					
 					<item>
 						<label>Select Livery</label>
 						<binding>
@@ -347,17 +352,14 @@
 							<command>dialog-show</command>
 							<dialog-name>effectscontrol</dialog-name>
 						</binding>
-					</item>
-					
+					</item>					
 					<item>
 						<label>Ground Service</label>
 						<binding>
 							<command>nasal</command>
 							<script>groundservice.serviceonoff()</script>
 						</binding>
-					</item>
-
-					
+					</item>					
 					<!--Ground proximity warning system (GPWS)-->
 					<item>
 						<label>Ground proximity warning system (GPWS)</label>
@@ -366,8 +368,7 @@
 							<property>instrumentation/mk-viii/servicable</property>
 						</binding>
 					</item>
-					
-					<!-- Dialogo do Pushback -->
+				<!-- Dialogo do Pushback -->
 				   <item>
 					    <label>Pushback</label>
 					    <name>pushback</name>
@@ -385,11 +386,11 @@
 	<!-- Definicoes para o estado dos motores e seus reversores de empuxo -->
 	<engines>
 		<engine n="0">
-			<running>true</running>
+			<running>false</running>
 			<reverser-position type="double">0.000000</reverser-position>
 		</engine>
 		<engine n="1">
-			<running>true</running>
+			<running>false</running>
 			<reverser-position type="double">0.000000</reverser-position>
 		</engine>
 	</engines>
@@ -405,54 +406,181 @@
 					<script>reversethrust.togglereverser()</script>
 				</binding>
 			</key>
-            <key n="1">
-                <name>Ctrl-A</name>
-                <desc>Toggle autopilot altitude lock</desc>
-                <binding>
-                    <command>property-toggle</command>
-                    <property>autopilot/locks/altitude</property>
-                </binding>
-            </key>
-             <key n="7">
-                <name>Ctrl-G</name>
-                <desc>Toggle autopilot glide slope lock</desc>
-                <binding>
-                    <command>property-toggle</command>
-                    <property>instrumentation/afds/inputs/app-hold</property>
-                </binding>
-            </key>
-            <key n="8">
-                <name>Ctrl-H</name>
-                <desc>Toggle autopilot heading lock</desc>
-                <binding>
-                    <command>property-toggle</command>
-                    <property>autopilot/locks/heading</property>
-                </binding>
-            </key>
-            <key n="14">
-                <name>Ctrl-N</name>
-                <desc>Toggle LNAV lock</desc>
-                <binding>
-                    <command>property-toggle</command>
-                    <property>instrumentation/afds/inputs/lnav-hold</property>
-                </binding>
-            </key>
-            <key n="16">
-                <name>Ctrl-P</name>
-                <desc>Toggle VS</desc>
-                <binding>
-                    <command>property-toggle</command>
-                    <property>instrumentation/afds/inputs/vs-fpa-hold</property>
-                </binding>
-            </key>
-            <key n="19">
-                <name>Ctrl-S</name>
-                <desc>Toggle autothrottle</desc>
-                <binding>
-                    <command>property-toggle</command>
-                    <property>autopilot/locks/speed</property>
-                </binding>
-            </key>
+ <key n="1">
+  <name>Ctrl-A</name>
+  <desc>Toggle autopilot altitude lock</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+     var node = props.globals.getNode("/autopilot/locks/altitude", 1);
+     if ( node.getValue() == "altitude-hold" ) {
+       node.setValue( "" );
+	   screen.log.write("Captain, altitude hold DISENGAGED...", 1.0,1.0,1.0);
+     } else {
+       node.setValue( "altitude-hold" );
+	   screen.log.write("Captain, altitude hold ENGAGED...", 1.0,1.0,1.0);
+     }
+   </script>
+  </binding>
+ </key>
+ 
+ <key n="7">
+  <name>Ctrl-G</name>
+  <desc>Toggle autopilot glide slope lock</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+     var node = props.globals.getNode("/autopilot/locks/altitude", 1);
+     if ( node.getValue() == "gs1-hold" ) {
+       node.setValue( "" );
+	   screen.log.write("Captain, glide slope lock DISENGAGED...", 1.0,1.0,1.0);
+     } else {
+       node.setValue( "gs1-hold" );
+	   screen.log.write("Captain, glide slope lock ENGAGED...", 1.0,1.0,1.0);
+     }
+   </script>
+  </binding>
+ </key>
+
+ <key n="8">
+  <name>Ctrl-H</name>
+  <desc>Toggle autopilot heading lock</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+     var node = props.globals.getNode("/autopilot/locks/heading", 1);
+     if ( node.getValue() == "dg-heading-hold" ) {
+       node.setValue( "" );
+	   screen.log.write("Captain, heading lock DISENGAGED...", 1.0,1.0,1.0);
+     } else {
+       node.setValue( "dg-heading-hold" );
+	   screen.log.write("Captain, heading lock ENGAGED...", 1.0,1.0,1.0);
+     }
+   </script>
+  </binding>
+ </key>
+
+ <key n="14">
+  <name>Ctrl-N</name>
+  <desc>Toggle autopilot nav1 lock</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+     var node = props.globals.getNode("/autopilot/locks/heading", 1);
+     if ( node.getValue() == "nav1-hold" ) {
+       node.setValue( "" );
+	   screen.log.write("Captain, autopilot nav1 lock DISENGAGED...", 1.0,1.0,1.0);
+     } else {
+       node.setValue( "nav1-hold" );
+	   screen.log.write("Captain, autopilot nav1 lock ENGAGED...", 1.0,1.0,1.0);
+     }
+   </script>
+  </binding>
+ </key>
+
+ <key n="16">
+  <name>Ctrl-P</name>
+  <desc>Toggle pitch hold</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+     var node = props.globals.getNode("/autopilot/locks/altitude", 1);
+     if ( node.getValue() == "pitch-hold" ) {
+       node.setValue( "" );
+	   screen.log.write("Captain, autopilot pitch hold DISENGAGED...", 1.0,1.0,1.0);
+     } else {
+       node.setValue( "pitch-hold" );
+       var pitch = props.globals.getNode("/autopilot/settings/target-pitch-deg", 1);
+       pitch.setValue( getprop("/orientation/pitch-deg") );
+	   screen.log.write("Captain, autopilot pitch hold ENGAGED...", 1.0,1.0,1.0);
+     }
+   </script>
+  </binding>
+ </key>
+ 
+ <key n="18">
+  <name>Ctrl-R</name>
+  <desc>Disengage autopilot</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+    var node1 = props.globals.getNode("/autopilot/locks/speed", 1);
+    var node2 = props.globals.getNode("/autopilot/locks/altitude", 1);
+    var node3 = props.globals.getNode("/autopilot/locks/heading", 1);
+	 
+    if ( ( node3.getValue() == "nav1-hold" ) and ( node1.getValue() == "speed-with-throttle" ) ) {
+       node2.setValue( "" );
+       node3.setValue( "" );
+	   screen.log.write("Captain, altitude e nav1 DISENGAGED!", 1.0,1.0,1.0);
+    } elsif ( node1.getValue() == "speed-with-throttle" ) {
+       node1.setValue( "" );
+       node2.setValue( "" );
+       node3.setValue( "" );
+	   screen.log.write("Captain, autopilot DISENGAGED!", 1.0,1.0,1.0);
+	} else {
+       node1.setValue( "speed-with-throttle" );
+       node3.setValue( "nav1-hold" );
+       node2.setValue( "altitude-hold" );
+	   screen.log.write("Captain, autopilot ENGAGED!", 1.0,1.0,1.0);
+    }
+   </script>
+  </binding>
+ </key>
+
+ <key n="19">
+  <name>Ctrl-S</name>
+  <desc>Toggle auto-throttle lock</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+     var node = props.globals.getNode("/autopilot/locks/speed", 1);
+     if ( node.getValue() == "speed-with-throttle" ) {
+       node.setValue( "" );
+	   screen.log.write("Captain, auto-throttle lock DISENGAGED!", 1.0,1.0,1.0);	   
+     } else {
+       node.setValue( "speed-with-throttle" );
+	   screen.log.write("Captain, auto-throttle lock ENGAGED!", 1.0,1.0,1.0);	   
+     }
+   </script>
+  </binding>
+ </key>
+ 
+ <key n="23">
+  <name>Ctrl-W</name>
+  <desc>Toggle autopilot wing leveler</desc>
+  <binding>
+   <command>nasal</command>
+   <script>
+     var node = props.globals.getNode("/autopilot/locks/heading", 1);
+     if ( node.getValue() == "wing-leveler" ) {
+       node.setValue( "" );
+	   screen.log.write("Captain, wing leveler DISENGAGED!", 1.0,1.0,1.0);	   
+     } else {
+       node.setValue( "wing-leveler" );
+	   screen.log.write("Captain, wing leveler ENGAGED!", 1.0,1.0,1.0);
+     }
+   </script>
+  </binding>
+ </key>
+
+			 <key n="263">
+			  <name>F7</name>
+			  <repeatable type="bool">true</repeatable>
+			  <mod-shift>
+			  <desc>Reload sound configuration</desc>
+			  <binding>
+			   <command>nasal</command>
+			   <script>
+				fgcommand("reinit", props.Node.new({ subsystem: "fx" })) ;
+			    print("xml-sound-fx reinitialized!");
+			   </script>
+			  </binding>
+			  </mod-shift>
+			 </key>
+
+			 
+			 
+
 		</keyboard>
 	</input>
 			
@@ -499,6 +627,9 @@
 
 	<!-- Codigos NASAL -->
 	<nasal>
+		<fmc>
+			<file>Aircraft/EMB-120/Nasal/FMC.nas</file>
+		</fmc>
 	    <livery>
 	        <file>Aircraft/EMB-120/Nasal/livery.nas</file>
 	    </livery>
@@ -508,21 +639,18 @@
 		<reversethrust>
 			<file>Aircraft/EMB-120/Nasal/reverse-thrust.nas</file>
 		</reversethrust>
-		<general>
-			<file>Aircraft/EMB-120/Nasal/general.nas</file>
-		</general>
 		<lights>
 			<file>Aircraft/EMB-120/Nasal/lights.nas</file>
 		</lights>
 		<groundservice>
 			<file>Aircraft/EMB-120/Nasal/groundservice.nas</file>
 		</groundservice>
-		<messagesys>
-			<file>Aircraft/EMB-120/Nasal/messagesys.nas</file>
-		</messagesys>
-		<effects>
-			<file>Aircraft/EMB-120/Nasal/effects.nas</file>
-		</effects>	
+		<!--
+		<emb120>
+			<file>Aircraft/EMB-120/Nasal/systems.nas</file>
+			<file>Aircraft/EMB-120/Nasal/systems.hydraulic.nas</file>
+		</emb120>
+		-->
 		
 	</nasal>
 

@@ -2,7 +2,7 @@
 <PropertyList>
 
  <!-- Define o modelo 3d da aeronave -->
- <path>EMB_120_005.ac</path>
+ <path>EMB_120_007.ac</path>
  
  <!-- REFERENCE / REFERENCIA
  
@@ -14,7 +14,7 @@
 
 	<!-- O Sistema de selecao de textura -->
 	<!-- Livery System -->
-<!--
+
     <nasal>
         <load>
             var livery_update = aircraft.livery_update.new("Aircraft/EMB-120/Models/Liveries", 10);
@@ -24,34 +24,77 @@
             livery_update.stop();
         </unload>
     </nasal>
- -->
+
     <!-- Objetos da primeira textura --> 
-<!--
+
      <animation>
 		<type>material</type>
 			<object-name>fuselage</object-name>
-			<object-name>exemplo1</object-name>
-			<object-name>exemplo2</object-name>
-			<object-name>exemplo3</object-name>
+			<object-name>nose_doo_fl</object-name>
+			<object-name>nose_doo_fr</object-name>
+			<object-name>nose_doo_bl</object-name>
+			<object-name>nose_doo_br</object-name>
+			<object-name>door_frontal</object-name>
+			<object-name>indoor</object-name>
+			<object-name>fuselage_door_cargo</object-name>
+			<object-name>vstab</object-name>
+			<object-name>rudder</object-name>
 		<property-base>sim/model/livery</property-base>
 		<texture-prop>texture</texture-prop>
       <texture>EMB-120.png</texture>
     </animation>
- -->    
+  
     <!-- Objetos da segunda textura --> 
-<!--
      <animation>
 		<type>material</type>
-			<object-name>misc1</object-name>
-			<object-name>misc2</object-name>
-			<object-name>misc3</object-name>
-		<property-base>sim/model/miscelania</property-base>
+			<!-- objetos das asas -->
+			<object-name>wing</object-name>
+			<object-name>flap_LI</object-name>
+			<object-name>flap_LE</object-name>
+			<object-name>aileron_L</object-name>
+			<object-name>flap_RI</object-name>
+			<object-name>flap_RE</object-name>
+			<object-name>aileron_R</object-name>
+			<object-name>hstab_R</object-name>
+			<object-name>elevator_R</object-name>
+			<object-name>hstab_L</object-name>
+			<object-name>elevator_L</object-name>
+			<!-- conjunto de objetos das turbinas -->
+			<object-name>PW_turbopropeller_L</object-name>
+			<object-name>landingear_FRL</object-name>
+			<object-name>landingear_FLL</object-name>
+			<object-name>landingear_BRL</object-name>
+			<object-name>landingear_BLL</object-name>
+			<object-name>flap_LM</object-name>
+			<object-name>PW_turbopropeller_R</object-name>
+			<object-name>landingear_FRR</object-name>
+			<object-name>landingear_FLR</object-name>
+			<object-name>landingear_BLR</object-name>
+			<object-name>landingear_BRR</object-name>
+			<object-name>flap_RM</object-name>
+			
+		<property-base>sim/model/wings</property-base>
 		<texture-prop>texture</texture-prop>
-		<texture>EMB-120misc.png</texture>
+		<texture>wings.png</texture>
     </animation>
--->
-<!-- Livery System -->
 
+    <!-- Objetos da terceira textura --> 
+    <!--
+     <animation>
+		<type>material</type>
+			<object-name>xxxxxxxxx</object-name>
+			<object-name>xxxxxxxxx</object-name>
+			<object-name>xxxxxxxxx</object-name>
+			<object-name>xxxxxxxxx</object-name>
+			<object-name>xxxxxxxxx</object-name>
+			<object-name>xxxxxxxxx</object-name>
+			<object-name>xxxxxxxxx</object-name>
+			<object-name>xxxxxxxxx</object-name>
+		<property-base>sim/model/turbofans</property-base>
+		<texture-prop>texture</texture-prop>
+		<texture>turbofans.png</texture>
+    </animation>
+	-->
 
 <!-- ############### -->
 <!-- ### MODELOS ### -->
@@ -111,6 +154,29 @@
     </condition>
   </animation>
 
+<!-- ############# -->
+<!-- ## Cockpit ## -->
+<!-- ############# -->
+   <model>
+        <name>flightdeck</name>
+        <path>Aircraft/EMB-120/Models/Cockpit/flightdeck.xml</path>
+        <offsets>
+            <x-m>1.15755</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.04857</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+    
+
+ <animation>
+ <name>escala</name>
+        <object-name>flightdeck</object-name>
+  <type>scale</type>
+  <x-offset>1.509055</x-offset>
+  <y-offset>1.509055</y-offset>
+  <z-offset>1.509055</z-offset>
+ </animation>
 
 <!-- ############# -->
 <!-- ## Effects ## -->
@@ -468,10 +534,14 @@
         <object-name>pec_inf_F</object-name>
         <object-name>lg_axis_inf_F</object-name>
         <object-name>lg_axis_central_F</object-name>
-        <property>gear/gear[2]/position-norm</property>
+        <property>gear/gear[0]/position-norm</property>
         <interpolation>
             <entry>
                 <ind>0</ind>
+                <dep> 95</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
                 <dep> 95</dep>
             </entry>
             <entry>
@@ -490,7 +560,395 @@
             <z>0</z>
         </axis>
     </animation>
+    
+    <!-- Portas do trem dianteiro -->
+    <animation>
+        <type>rotate</type>
+        <object-name>nose_doo_fl</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>0.75</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> -7.89396</x1-m>
+	     <y1-m>-0.390086</y1-m>
+	     <z1-m>-1.23096</z1-m>
+	     <x2-m> -6.79246</x2-m>
+	     <y2-m>-0.390086</y2-m>
+	     <z2-m>-1.3993</z2-m>
+	  </axis>
+    </animation>
 
+    <animation>
+        <type>rotate</type>
+        <object-name>nose_doo_fr</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>0.75</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> -7.89396</x1-m>
+	     <y1-m>0.390086</y1-m>
+	     <z1-m>-1.23096</z1-m>
+	     <x2-m> -6.79246</x2-m>
+	     <y2-m>0.390086</y2-m>
+	     <z2-m>-1.3993</z2-m>
+	  </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>nose_doo_bl</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>0.75</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>-95</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> -6.79246</x1-m>
+	     <y1-m>-0.390086</y1-m>
+	     <z1-m>-1.3993</z1-m>
+	     <x2-m> -6.02796</x2-m>
+	     <y2-m>-0.390086</y2-m>
+	     <z2-m>-1.42272</z2-m>
+	  </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>nose_doo_br</object-name>
+        <property>gear/gear[0]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>0.75</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>95</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> -6.79246</x1-m>
+	     <y1-m> 0.390086</y1-m>
+	     <z1-m>-1.3993</z1-m>
+	     <x2-m> -6.02796</x2-m>
+	     <y2-m> 0.390086</y2-m>
+	     <z2-m>-1.42272</z2-m>
+	  </axis>
+    </animation>
+
+    <!-- Portas do trem traseiro esquerdo -->
+    <animation>
+        <type>rotate</type>
+        <object-name>landingear_FLL</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>0.55</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> 0.297903</x1-m>
+	     <y1-m>-3.74938</y1-m>
+	     <z1-m>-1.47917</z1-m>
+	     <x2-m> -1.53036</x2-m>
+	     <y2-m>-3.74938</y2-m>
+	     <z2-m>-1.22693</z2-m>
+	  </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>landingear_FRL</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>0.55</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> 0.297903</x1-m>
+	     <y1-m>-2.91679</y1-m>
+	     <z1-m>-1.47917</z1-m>
+	     <x2-m> -1.53036</x2-m>
+	     <y2-m>-2.91679</y2-m>
+	     <z2-m>-1.22693</z2-m>
+	  </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>landingear_BLL</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>0.55</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>-55</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> 0.297903</x1-m>
+	     <y1-m>-3.74938</y1-m>
+	     <z1-m>-1.47917</z1-m>
+	     <x2-m> 1.07766</x2-m>
+	     <y2-m>-3.74938</y2-m>
+	     <z2-m>-1.29992</z2-m>
+	  </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>landingear_BRL</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>0.55</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>55</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> 0.297903</x1-m>
+	     <y1-m>-2.91679</y1-m>
+	     <z1-m>-1.47917</z1-m>
+	     <x2-m> 1.07766</x2-m>
+	     <y2-m>-2.91679</y2-m>
+	     <z2-m>-1.29992</z2-m>
+	  </axis>
+    </animation>
+    
+    <!-- Portas do trem traseiro direito -->
+    <animation>
+        <type>rotate</type>
+        <object-name>landingear_FLR</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>0.55</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> 0.297903</x1-m>
+	     <y1-m>3.74938</y1-m>
+	     <z1-m>-1.47917</z1-m>
+	     <x2-m> -1.53036</x2-m>
+	     <y2-m>3.74938</y2-m>
+	     <z2-m>-1.22693</z2-m>
+	  </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>landingear_FRR</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>0.55</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>0</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> 0.297903</x1-m>
+	     <y1-m>2.91679</y1-m>
+	     <z1-m>-1.47917</z1-m>
+	     <x2-m> -1.53036</x2-m>
+	     <y2-m>2.91679</y2-m>
+	     <z2-m>-1.22693</z2-m>
+	  </axis>
+    </animation>
+    
+    <animation>
+        <type>rotate</type>
+        <object-name>landingear_BLR</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>0.55</ind>
+                <dep>95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>55</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> 0.297903</x1-m>
+	     <y1-m>3.74938</y1-m>
+	     <z1-m>-1.47917</z1-m>
+	     <x2-m> 1.07766</x2-m>
+	     <y2-m>3.74938</y2-m>
+	     <z2-m>-1.29992</z2-m>
+	  </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>landingear_BRR</object-name>
+        <property>gear/gear[1]/position-norm</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>0.25</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>0.55</ind>
+                <dep>-95</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>-55</dep>
+            </entry>
+        </interpolation>
+	  <axis>
+	     <x1-m> 0.297903</x1-m>
+	     <y1-m>2.91679</y1-m>
+	     <z1-m>-1.47917</z1-m>
+	     <x2-m> 1.07766</x2-m>
+	     <y2-m>2.91679</y2-m>
+	     <z2-m>-1.29992</z2-m>
+	  </axis>
+    </animation>
+
+    
 <!-- ###### -->
 <!-- Rudder -->
 <!-- ###### -->
@@ -712,6 +1170,94 @@
    </axis>
  </animation>
  
+<!-- ##### -->
+<!-- Doors -->
+<!-- ##### -->
+  <animation>
+   <type>pick</type>
+        <object-name>door_frontal</object-name>
+        <object-name>door_frontal_internal</object-name>
+   <action>
+     <name>Pax_door_control</name>
+     <button>0</button>
+	<binding>
+		 <command>property-cycle</command>
+		 <property>controls/switches/paxdoor1</property>
+		 <value type="int">0</value>
+		 <value type="int">1</value>
+	</binding>
+   </action>
+  </animation>
+
+  <animation>
+   <type>pick</type>
+        <object-name>fuselage_door_cargo</object-name>
+        <object-name>fuselage_door_cargo_internal</object-name>
+   <action>
+     <name>Cargo_door_control</name>
+     <button>0</button>
+	<binding>
+		 <command>property-cycle</command>
+		 <property>controls/switches/cargodoor1</property>
+		 <value type="int">0</value>
+		 <value type="int">1</value>
+	</binding>
+   </action>
+  </animation>
+
+	<!-- Portas pax -->
+    <animation>
+        <type>rotate</type>
+        <object-name>door_frontal</object-name>
+        <object-name>door_frontal_internal</object-name>
+        <property>controls/switches/paxdoor1</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>145</dep>
+            </entry>
+        </interpolation>
+        <axis>
+        	<x1-m>-4.16793</x1-m>
+        	<y1-m>-1.02627</y1-m>
+        	<z1-m>-0.924628</z1-m>
+        	<x2-m>-3.5625</x2-m>
+        	<y2-m>-1.02627</y2-m>
+        	<z2-m>-0.924628</z2-m>
+        </axis>
+    </animation>
+
+	<!-- Portas de carga -->
+    <animation>
+        <type>rotate</type>
+        <object-name>fuselage_door_cargo</object-name>
+        <object-name>fuselage_door_cargo_internal</object-name>
+        <property>controls/switches/cargodoor1</property>
+        <interpolation>
+            <entry>
+                <ind>0</ind>
+                <dep>0</dep>
+            </entry>
+            <entry>
+                <ind>1.0</ind>
+                <dep>-105</dep>
+            </entry>
+        </interpolation>
+        <axis>
+        	<x1-m>6.26545</x1-m>
+        	<y1-m>-0.778234</y1-m>
+        	<z1-m>-0.8158</z1-m>
+        	<x2-m>6.26545</x2-m>
+        	<y2-m>-0.887879</y2-m>
+        	<z2-m>0.2027</z2-m>
+        </axis>
+    </animation>
+
+ 
 <!-- Select propeller disc -->
  <animation>
    <type>select</type>
@@ -724,12 +1270,71 @@
      </greater-than>
    </condition>
  </animation>
+ 
+<!-- ########## -->
+<!-- Iluminacao -->
+<!-- ########## -->
+
+<!-- Iluminacao de cabina -->
+<animation>
+ <type>material</type>
+			<condition>
+				<equals>
+					<property>controls/lighting/cabin-lights</property>
+					<value>true</value>
+				</equals>
+				<greater-than>
+					<property>systems/electrical/outputs/cabin-lights</property>
+					<value>24</value>
+				</greater-than>
+			</condition>
+    <object-name>fuselage_interior</object-name>
+    <object-name>fuselage_internal</object-name>
+    <object-name>door_frontal_internal</object-name>
+    <object-name>fuselage_internal_floor</object-name>
+    <object-name>Cabin.seats</object-name>
+    <object-name>comp_sup_bagagem</object-name>
+    <object-name>fuselage_door_cargo_internal</object-name>
+ <emission>  
+	  <red>0.6323529</red>
+	  <green>0.6082353</green>
+	  <blue>0.6241178</blue>
+	  <factor-prop>controls/lighting/cabin-lights</factor-prop>
+ </emission>
+</animation>
+  
+<!-- Iluminacao de flightdeck -->
+
+<animation>
+ <type>material</type>
+			<condition>
+				<equals>
+					<property>controls/lighting/cabin-lights</property>
+					<value>true</value>
+				</equals>
+				<greater-than>
+					<property>systems/electrical/outputs/cabin-lights</property>
+					<value>24</value>
+				</greater-than>
+			</condition>
+    <object-name>fuselage_flightdeck</object-name>
+    <object-name>fuselage_interior_glass</object-name>
+ <emission>  
+	  <red>0.2809755</red>
+	  <green>0.2835892</green>
+	  <blue>0.3084197</blue>
+	  <factor-prop>controls/lighting/cabin-lights</factor-prop>
+ </emission>
+</animation>
+  
 
 <!-- Janelas - ajuste iluminacao -->
   <animation>
     <type>noshadow</type>
     <object-name>janelas</object-name>
     <object-name>janelas_noite</object-name>
+    <object-name>janelas_internal</object-name>
+    <object-name>janelas_internal_noite</object-name>
   </animation>
   
 	<!-- Efeito das luzes a noite -->
@@ -738,17 +1343,25 @@
     <animation>
         <type>select</type>
         <object-name>janelas_noite</object-name>
+        <object-name>janelas_internal_noite</object-name>
         <condition>
+    		<and>    
                 <greater-than>
                     <property>sim/time/sun-angle-rad</property>
                     <value>1.55</value>
                 </greater-than>
+				<equals>
+					<property>sim/current-view/internal</property>
+					<value>0</value>
+				</equals>
+            </and>
         </condition>
     </animation>
 
     <animation>
         <type>select</type>
         <object-name>janelas</object-name>
+        <object-name>janelas_internal</object-name>
         <condition>
                 <less-than>
                     <property>sim/time/sun-angle-rad</property>
@@ -757,6 +1370,76 @@
         </condition>
     </animation>
 		   
+<!-- Giro das rodas -->
 
- 
+<!-- Trem de pouso dianteiro -->
+<animation>
+  <name>Gear_direction</name>
+  <type>rotate</type>
+  		<object-name>tire_nose_R</object-name>
+        <object-name>tire_nose_L</object-name>
+        <object-name>lg_axis_central_F</object-name>
+        <object-name>pec_inf_F</object-name>
+        <object-name>pec_sup_F</object-name>
+        <object-name>lg_axis_inf_F</object-name>
+        <object-name>lg_axis_sup_F</object-name>
+  <property>controls/flight/rudder</property>
+  <factor>50</factor>
+        <axis>
+        	<x1-m>-6.19155</x1-m>
+        	<y1-m>0.00288395</y1-m>
+        	<z1-m>-1.21377</z1-m>
+        	<x2-m>-6.32245</x2-m>
+        	<y2-m>0.00288396</y2-m>
+        	<z2-m>-1.99171</z2-m>
+        </axis>
+</animation>
+
+<animation>
+  <name>Tire_rotate_nose</name>
+        <type>spin</type>
+  		<object-name>tire_nose_R</object-name>
+        <object-name>tire_nose_L</object-name>
+        <property>gear/gear[0]/rollspeed-ms</property>
+        <factor>15</factor>
+        <center>
+			<x-m>-6.3681</x-m>
+			<y-m>0.0</y-m>
+			<z-m>-2.23254</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+</animation>
+    
+<animation>
+  <name>Tire_rotate_af</name>
+  <type>spin</type>
+  <object-name>tire_gear_RR</object-name>
+  <object-name>tire_gear_RL</object-name>
+  <object-name>tire_gear_LL</object-name>
+  <object-name>tire_gear_LR</object-name>
+  <condition>
+   <less-than>
+    <property>/position/altitude-agl-ft</property>
+    <value>20</value>
+   </less-than>
+  </condition>
+  <property>gear/gear[0]/rollspeed-ms</property>
+  <factor>15</factor>
+  <center>
+   <x-m>0.508944</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-2.36716</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>-1</y>
+   <z>0</z>
+  </axis>
+</animation>
+    
+
 </PropertyList>

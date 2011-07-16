@@ -133,11 +133,6 @@ file, these values will be used (they are hardcoded).
     <number>0</number>
   </radar>
 
-  <tacan>
-    <name>tacan</name>
-    <number>0</number>
-  </tacan>
-
  <mk-viii>
    <name>mk-viii</name>
    <number>0</number>
