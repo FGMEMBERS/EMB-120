@@ -27,7 +27,7 @@
 </animation>
     
     <model><!-- reg label -->
-        <path>Aircraft/b1900d/Models/registration.xml</path>
+        <path>Aircraft/EMB-120/Models/registration.xml</path>
         <offsets>
             <x-m>-4.896</x-m>
             <y-m>0.153</y-m>
@@ -51,7 +51,7 @@
 
     <model>
         <name>manual</name>
-        <path>Aircraft/b1900d/Manual/manual.xml</path>
+        <path>Aircraft/EMB-120/Manual/manual.xml</path>
         <offsets>
             <x-m>-4.504</x-m>
             <y-m>-0.38</y-m>
@@ -128,7 +128,7 @@
 
     <model>
         <name>Stby-gyro</name>
-        <path>Aircraft/b1900d/Models/Instruments/stby-gyro.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/stby-gyro.xml</path>
         <offsets>
             <x-m>-4.874</x-m>
             <y-m>0.050</y-m>
@@ -139,7 +139,7 @@
 
     <model>
         <name>ITT1 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/itt1.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/itt1.xml</path>
         <offsets>
             <x-m>-4.892</x-m>
             <y-m>-0.205</y-m>
@@ -150,7 +150,7 @@
 
     <model>
         <name>ITT2 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/itt2.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/itt2.xml</path>
         <offsets>
             <x-m>-4.892</x-m>
             <y-m>-0.149</y-m>
@@ -161,7 +161,7 @@
 
     <model>
         <name>Torq1 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/torq1.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/torq1.xml</path>
         <offsets>
             <x-m>-4.883</x-m>
             <y-m>-0.205</y-m>
@@ -172,7 +172,7 @@
 
     <model>
         <name>Torq2 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/torq2.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/torq2.xml</path>
         <offsets>
             <x-m>-4.883</x-m>
             <y-m>-0.149</y-m>
@@ -183,7 +183,7 @@
 
     <model>
         <name>RPM1 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/rpm1.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/rpm1.xml</path>
         <offsets>
             <x-m>-4.874</x-m>
             <y-m>-0.205</y-m>
@@ -194,7 +194,7 @@
 
     <model>
         <name>RPM2 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/rpm2.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/rpm2.xml</path>
         <offsets>
             <x-m>-4.874</x-m>
             <y-m>-0.149</y-m>
@@ -205,7 +205,7 @@
 
     <model>
         <name>N21 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/n21.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/n21.xml</path>
         <offsets>
             <x-m>-4.865</x-m>
             <y-m>-0.205</y-m>
@@ -216,7 +216,7 @@
 
     <model>
         <name>N22 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/n22.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/n22.xml</path>
         <offsets>
             <x-m>-4.865</x-m>
             <y-m>-0.149</y-m>
@@ -227,7 +227,7 @@
 
     <model>
         <name>FFlow1 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/fflow1.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/fflow1.xml</path>
         <offsets>
             <x-m>-4.856</x-m>
             <y-m>-0.205</y-m>
@@ -238,7 +238,7 @@
 
     <model>
         <name>FFlow2 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/fflow2.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/fflow2.xml</path>
         <offsets>
             <x-m>-4.856</x-m>
             <y-m>-0.149</y-m>
@@ -249,7 +249,7 @@
 
     <model>
         <name>Oil1 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/oilp1.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/oilp1.xml</path>
         <offsets>
             <x-m>-4.847</x-m>
             <y-m>-0.205</y-m>
@@ -260,7 +260,7 @@
 
     <model>
         <name>Oil2 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/oilp2.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/oilp2.xml</path>
         <offsets>
             <x-m>-4.847</x-m>
             <y-m>-0.149</y-m>
@@ -271,7 +271,7 @@
 
     <model>
         <name>ALT1 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/altimeter1.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/altimeter1.xml</path>
         <offsets>
             <x-m>-4.877</x-m>
             <y-m>-0.280</y-m>
@@ -282,7 +282,7 @@
 
     <model>
         <name>ALT2 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/altimeter1.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/altimeter1.xml</path>
         <offsets>
             <x-m>-4.877</x-m>
             <y-m>0.257</y-m>
@@ -293,7 +293,7 @@
 
     <model>
         <name>VSI 1 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/vsi.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/vsi.xml</path>
         <offsets>
             <x-m>-4.860</x-m>
             <y-m>-0.280</y-m>
@@ -304,7 +304,7 @@
 
     <model>
         <name>VSI 2 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/vsi.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/vsi.xml</path>
         <offsets>
             <x-m>-4.860</x-m>
             <y-m>0.450</y-m>
@@ -315,7 +315,7 @@
 
     <model>
         <name>ASI 1 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/asi300.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/asi300.xml</path>
         <offsets>
             <x-m>-4.876</x-m>
             <y-m>-0.475</y-m>
@@ -326,7 +326,7 @@
 
     <model>
         <name>ASI 2 gauge</name>
-        <path>Aircraft/b1900d/Models/Instruments/asi300.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/asi300.xml</path>
         <offsets>
             <x-m>-4.876</x-m>
             <y-m>0.450</y-m>
@@ -337,7 +337,7 @@
 
     <model>
         <name>EFIS84 EADI-pilot</name>
-        <path>Aircraft/b1900d/Models/Instruments/eadi.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/eadi.xml</path>
         <offsets>
             <x-m>-4.876</x-m>
             <y-m>-0.377</y-m>
@@ -348,7 +348,7 @@
 
     <model>
         <name>EFIS84 EADI-copilot</name>
-        <path>Aircraft/b1900d/Models/Instruments/eadi.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/eadi.xml</path>
         <offsets>
             <x-m>-4.876</x-m>
             <y-m>0.353</y-m>
@@ -359,7 +359,7 @@
 
     <model>
         <name>EFIS84 EHSI-pilot</name>
-        <path>Aircraft/b1900d/Models/Instruments/ehsi.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/ehsi.xml</path>
         <offsets>
             <x-m>-4.856</x-m>
             <y-m>-0.377</y-m>
@@ -370,7 +370,7 @@
 
     <model>
         <name>EFIS84 EHSI-copilot</name>
-        <path>Aircraft/b1900d/Models/Instruments/ehsi.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/ehsi.xml</path>
         <offsets>
             <x-m>-4.856</x-m>
             <y-m>0.353</y-m>
@@ -381,7 +381,7 @@
 
     <model>
         <name>Autopilot Control</name>
-        <path>Aircraft/b1900d/Models/Instruments/AP-control.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/AP-control.xml</path>
         <offsets>
             <x-m>-4.337</x-m>
             <y-m>-0.068</y-m>
@@ -392,7 +392,7 @@
 
     <model>
         <name>RIC</name>
-        <path>Aircraft/b1900d/Models/Instruments/RIC.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/RIC.xml</path>
         <offsets>
             <x-m>-4.398</x-m>
             <y-m>-0.068</y-m>
@@ -403,7 +403,7 @@
 
     <model>
         <name>Altitude Set</name>
-        <path>Aircraft/b1900d/Models/Instruments/altset.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/altset.xml</path>
         <offsets>
             <x-m>-4.865</x-m>
             <y-m>-0.070</y-m>
@@ -414,7 +414,7 @@
 
     <model>
         <name>RMI pilot</name>
-        <path>Aircraft/b1900d/Models/Instruments/rmi.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/rmi.xml</path>
         <offsets>
             <x-m>-4.863</x-m>
             <y-m>-0.473</y-m>
@@ -425,7 +425,7 @@
 
     <model>
         <name>RMI copilot</name>
-        <path>Aircraft/b1900d/Models/Instruments/rmi.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/rmi.xml</path>
         <offsets>
             <x-m>-4.863</x-m>
             <y-m>0.257</y-m>
@@ -436,7 +436,7 @@
 
     <model>
         <name>Pilot clock</name>
-        <path>Aircraft/b1900d/Models/Instruments/clock.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/clock.xml</path>
         <offsets>
             <x-m>-4.873</x-m>
             <y-m>-0.548</y-m>
@@ -447,7 +447,7 @@
 
     <model>
         <name>Copilot clock</name>
-        <path>Aircraft/b1900d/Models/Instruments/clock.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/clock.xml</path>
         <offsets>
             <x-m>-4.873</x-m>
             <y-m>0.524</y-m>
@@ -458,7 +458,7 @@
 
     <model>
         <name>CCU-65</name>
-        <path>Aircraft/b1900d/Models/Instruments/ccu65.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/ccu65.xml</path>
         <offsets>
             <x-m>-4.863</x-m>
             <y-m>-0.547</y-m>
@@ -469,7 +469,7 @@
 
     <model>
         <name>CCU-65 CP</name>
-        <path>Aircraft/b1900d/Models/Instruments/ccu65.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/ccu65.xml</path>
         <offsets>
             <x-m>-4.863</x-m>
             <y-m>0.525</y-m>
@@ -481,7 +481,7 @@
 
     <model>
         <name>Fuel Quantity</name>
-        <path>Aircraft/b1900d/Models/Instruments/fuelqty.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/fuelqty.xml</path>
         <offsets>
             <x-m>-4.661</x-m>
             <y-m>-0.601</y-m>
@@ -493,7 +493,7 @@
 
     <model>
         <name>DC Panel</name>
-        <path>Aircraft/b1900d/Models/Instruments/dcpanel.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/dcpanel.xml</path>
         <offsets>
             <x-m>-4.492</x-m>
             <y-m>0.0</y-m>
@@ -504,7 +504,7 @@
 
     <model>
         <name>Mag Compass</name>
-        <path>Aircraft/b1900d/Models/Instruments/magcompass.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/magcompass.xml</path>
         <offsets>
             <x-m>-4.706</x-m>
             <y-m>0.0</y-m>
@@ -515,7 +515,7 @@
 
     <model>
         <name>FDC Pilot</name>
-        <path>Aircraft/b1900d/Models/Instruments/fdc.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/fdc.xml</path>
         <offsets>
             <x-m>-4.889</x-m>
             <y-m>-0.378</y-m>
@@ -526,7 +526,7 @@
 
     <model>
         <name>FDC CoPilot</name>
-        <path>Aircraft/b1900d/Models/Instruments/fdc.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/fdc.xml</path>
         <offsets>
             <x-m>-4.889</x-m>
             <y-m>0.356</y-m>
@@ -537,7 +537,7 @@
 
     <model>
         <name>GPS</name>
-        <path>Aircraft/b1900d/Models/Instruments/KLN90B/kln90b.xml</path>
+        <path>Aircraft/EMB-120/Models/Instruments/KLN90B/kln90b.xml</path>
         <offsets>
             <x-m>-4.864</x-m>
             <y-m>0.132</y-m>

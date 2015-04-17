@@ -12,7 +12,7 @@
 		SET-2009, inicio do desenvolvimento do modelo.
 		15-JAN-2010, primeira versao apresentada.
 		05-FEB-2010, atualizado o sistema de dialogos integrado.
-		04-JUN-2010, atualizado o sistema de som e elétrico.
+		04-JUN-2010, atualizado o sistema de som e trico.
 
 	License : GNU GPL v.3
 	
@@ -20,11 +20,7 @@
     		
  -->
  
-<!-- SOBRE O Embraer EMB-120 Brasilia 
-
-	Aeronave criada por OS_AUTORE_S_DO_AVIAO.
-
--->
+<!--  Embraer EMB-120 Brasilia -->
 
 <PropertyList>
  <sim>
@@ -32,16 +28,11 @@
 		<description>Embraer EMB-120 Brasilia</description>
 		<author>Aurino Neves, Isaias V. Prestes</author>
 		
-		<!-- Estado de desenvolvimento da aeronave -->
 		<status>alpha</status>
-<!--		<status>beta</status>		-->
-<!--		<status>development</status>		-->
-
+       	<status>beta</status>	
+		<status>development</status>
 		<flight-model>yasim</flight-model>
-
-		<!-- O nome basico do aviao fornecido ao FDM, 
-			geralmente o nome da pasta do aviao -->
-		<aero>EMB-120</aero>
+		   <aero>EMB-120</aero>
 
 		<virtual-cockpit archive="y">false</virtual-cockpit>
 
@@ -75,7 +66,7 @@
 			<splash-texture>Aircraft/EMB-120/splash.png</splash-texture>
 		</startup>
 
-		<!-- modificações para funcionamento dos liveries - http://wiki.flightgear.org/index.php/Livery_over_MP -->
+		<!-- modificaes para funcionamento dos liveries - http://wiki.flightgear.org/index.php/Livery_over_MP -->
 		<model>
 			<path>Aircraft/EMB-120/Models/EMB-120.xml</path>
 			<livery>
@@ -97,7 +88,6 @@
 		<view>
 			<internal archive="y">true</internal>
 			<config>
-				<!-- x/y/z == (esquerda, direita)/(cima, baixo)/(frente, tras) -->
 				<x-offset-m archive="y">-0.38127</x-offset-m>
 				<y-offset-m archive="y">0.324531</y-offset-m>
 				<z-offset-m archive="y">-4.6502</z-offset-m>
@@ -194,20 +184,16 @@
 			</config>
 		</view>
 		
-		<!-- Distancia padrao da vista para o aviao (metros) -->
 		<chase-distance-m>-45</chase-distance-m>
 
 		
-		<!-- Ajuste dos flaps -->
 		<flaps>
-			<setting>0.000</setting>
-			<!-- flaps up -->
-			<setting>0.3333333</setting>
-			<!-- flaps 15  -->
-			<setting>0.5555556</setting>
-			<!-- flaps 25 -->
-			<setting>1.0000000</setting>
-			<!-- flaps 45 -->
+			<setting>0.00</setting>
+			<setting>0.23</setting>
+                  <setting>0.38</setting>
+			<setting>0.58</setting>
+               	<setting>0.77</setting>
+			<setting>1.00</setting>
 		</flaps>
 		
 
@@ -381,9 +367,9 @@
 			</default>
 		</menubar>
 
- </sim>		<!-- FIM DA SECAO SIM -->
-
-	<!-- Definicoes para o estado dos motores e seus reversores de empuxo -->
+ </sim>		
+ 
+ 
 	<engines>
 		<engine n="0">
 			<running>false</running>
@@ -576,11 +562,7 @@
 			   </script>
 			  </binding>
 			  </mod-shift>
-			 </key>
-
-			 
-			 
-
+			 </key>		 
 		</keyboard>
 	</input>
 			
@@ -654,7 +636,7 @@
 		
 	</nasal>
 
-	<!-- Ajustes da Instrumentação -->
+	<!-- Ajustes da Instrumentao -->
 	<instrumentation>
 		<mk-viii>
 			<serviceable>true</serviceable>

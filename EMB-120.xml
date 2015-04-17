@@ -53,24 +53,24 @@ Reference :
 	* A31SO/Revision 1/EMBRAER/3-15-87 http://rgl.faa.gov/regulatory_and_guidance_Library/rgMakeModel.nsf/0/1f0492e91f3bd40786256df100524a06/$FILE/A31SO.pdf
 	* Embraer 120 characteristics for general airport planning http://www.embraer.com.br/portugues/content/aeronaves/emb120.asp?tela=apm
 -->
-<airplane mass="15586">
+<airplane mass="16500">
 
-    <approach speed="87" aoa="3" fuel="0.5">
+    <approach speed="87" aoa="5" fuel="0.25">
         <control-setting axis="/controls/engines/engine[0]/throttle" value="0.20"/>
         <control-setting axis="/controls/engines/engine[1]/throttle" value="0.20"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
-        <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.7"/>
-        <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.7"/>
+        <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.3"/>
+        <control-setting axis="/controls/engines/engine[1]/propeller-pitch" value="0.3"/>
         <control-setting axis="/controls/flight/flaps" value="0.5"/>
         <control-setting axis="/controls/gear/gear-down" value="1"/>
         <solve-weight idx="0" weight="360"/>
         <solve-weight idx="1" weight="1898"/>
     </approach>
 
-    <cruise speed="298" alt="20000" fuel="0.7">
-        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.75"/>
-        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.75"/>
+    <cruise speed="328" alt="20000" fuel="0.7">
+        <control-setting axis="/controls/engines/engine[0]/throttle" value="0.89"/>
+        <control-setting axis="/controls/engines/engine[1]/throttle" value="0.89"/>
         <control-setting axis="/controls/engines/engine[0]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[1]/condition" value="1.0"/>
         <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
@@ -85,13 +85,13 @@ Reference :
     <cockpit x="4.87102" y="0.38127" z="0.324531"/>
 
     <fuselage ax="8.59686" ay="0" az="-1.08789" bx="6.02795" by="0" bz="-0.67601"
-        width="1.59" taper="0.2" midpoint="1.0"/>
+        width="1.49" taper="0.2" midpoint="1.0"/>
     <fuselage ax="6.02795" ay="0" az="-0.67601" bx="4.37476" by="0" bz="-0.238895"
-        width="2.57" taper="0.651822" midpoint="1.0"/>
+        width="2.17" taper="0.651822" midpoint="1.0"/>
     <fuselage ax="4.37476" ay="0" az="-0.238895" bx="-2.66246" by="0" bz="-0.238895"
-        width="2.57" taper="1" cy="1.5" cx="1.5"/>
+        width="2.17" taper="1" midpoint="0.5" cy="6.5" cx="6.5"/>
     <fuselage ax="-2.66246" ay="0" az="-0.238895" bx="-9.72359" by="0" bz="0.207694"
-        width="2.38" taper="0.1" midpoint="0.0" cy="1.5" cx="1.5"/>
+        width="1.98" taper="0.19" midpoint="0.0" cy="5.5" cx="5.5"/>
 
     <!--
 Wing chord - root: 2.18 m
@@ -102,12 +102,18 @@ Root incidence 3.29 deg.
 Tip incidence -1.4 deg.
 -->
 
-    <wing x="-0.17246" y="1.00208" z="-1.23137" length="8.87" chord="2.77"
-        sweep="0" dihedral="6" taper="0.417" camber="0.05"
-        incidence="3.29" twist="-4.69">
-        <stall aoa="12" width="8" peak="1.5"/>
-        <flap0 start="0" end=".6" lift="1.5" drag="1.7"/>
-        <flap1 start=".6" end=".95" lift="1.2" drag="1.2"/>
+    <wing x="-0.17246" y="1.00208" z="-1.23137"
+            length="8.87"
+            chord="2.77"
+            sweep="0"
+            dihedral="6"
+            taper="0.47"
+            camber="0.03"
+            incidence="2.5"
+            twist="-2.25">
+        <stall aoa="15" width="5" peak="2.5"/>
+        <flap0 start="0" end="0.6" lift="1.5" drag="1.87"/>
+        <flap1 start="0.6" end="0.95" lift="1.37" drag="1.17"/>
         <control-input axis="/controls/flight/flaps" control="FLAP0"/>
         <control-speed control="FLAP0" transition-time="15"/>
         <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>
@@ -201,14 +207,27 @@ http://www.pwc.ca/en/engines/pw118
 -->
 
     <propeller x="1.9" y="2.65" z="0.0"
-        mass="515" moment="10" radius="1.39"
-        cruise-speed="328" cruise-rpm="1275"
-        cruise-power="1000" cruise-alt="20000"
-        min-rpm="600" max-rpm="1300"
-        fine-stop="0.5" coarse-stop="4.0">
+               mass="515"
+               moment="30"
+               radius="1.39"
+               blades="4"
+               cruise-speed="328" 
+               cruise-rpm="1300"
+               cruise-power="1700" 
+               cruise-alt="20000"
+               min-rpm="900" 
+               max-rpm="1300"
+               fine-stop="0.3"
+               coarse-stop="1.0">
         <turbine-engine
-            eng-power="1800" eng-rpm="1300" alt="25000"
-            flat-rating="1250" min-n2="65" max-n2="105" bsfc="0.46" spool-time="4"/>
+                       eng-power="1800"
+                       eng-rpm="1300"
+                       alt="20000"
+                       flat-rating="1550"
+                       min-n2="65"
+                       max-n2="105"
+                       bsfc="0.46"
+                       spool-time="4"/>
         <actionpt x="2.23" y="2.65" z="0.0"/>
         <control-input axis="/controls/engines/engine[0]/throttle"
             control="THROTTLE"/>
@@ -223,14 +242,27 @@ http://www.pwc.ca/en/engines/pw118
     </propeller>
 
     <propeller x="1.9" y="-2.65" z="0.0"
-        mass="515" moment="10" radius="1.39"
-        cruise-speed="328" cruise-rpm="1275"
-        cruise-power="1000" cruise-alt="20000"
-        min-rpm="600" max-rpm="1300"
-        fine-stop="0.5" coarse-stop="4.0">
+               mass="515"
+               moment="30"
+               radius="1.39"
+               blades="4"
+               cruise-speed="328" 
+               cruise-rpm="1300"
+               cruise-power="1700" 
+               cruise-alt="20000"
+               min-rpm="900" 
+               max-rpm="1300"
+               fine-stop="0.3"
+               coarse-stop="1.0">
         <turbine-engine
-            eng-power="1800" eng-rpm="1300" alt="25000"
-            flat-rating="1250" min-n2="65" max-n2="105" bsfc="0.46" spool-time="4"/>
+                       eng-power="1800"
+                       eng-rpm="1300"
+                       alt="20000"
+                       flat-rating="1550"
+                       min-n2="65"
+                       max-n2="105"
+                       bsfc="0.46"
+                       spool-time="4"/>
         <actionpt x="2.23" y="-2.65" z="0.0"/>
         <control-input axis="/controls/engines/engine[1]/throttle"
             control="THROTTLE"/>
