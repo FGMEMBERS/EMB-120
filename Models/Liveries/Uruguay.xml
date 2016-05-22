@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+<sim>
+    <model>
+			<livery>
+				<name type="string">Uruguay</name>
+				<texture>uruguay_fuse.png</texture>
+			</livery>
+			<wings>
+				<name type="string">Uraguay</name>
+				<texture>uruguay_wings.png</texture>
+			</wings>
+    </model>
+</sim>
+</PropertyList>
